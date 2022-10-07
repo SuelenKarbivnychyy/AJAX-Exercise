@@ -65,8 +65,14 @@ def order_melons():
     else:
         result_code = 'ERROR'
         result_text = "You want to buy fewer than 1 melons? Huh?"
-    print(jsonify({'code': result_code, 'msg': result_text}))
+    # print(jsonify({'code': result_code, 'msg': result_text}))
     return jsonify({'code': result_code, 'msg': result_text})
+
+
+# FURTHER STUDY
+# @app.route('/dogs_picture') 
+# def dogs_picture():
+
 
 
 if __name__ == "__main__":

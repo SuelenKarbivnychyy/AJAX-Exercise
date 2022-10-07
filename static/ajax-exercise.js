@@ -72,7 +72,7 @@ function orderMelons(evt) {
       let orderStatusDiv = document.getElementById('order-status');
 
       if (responseJson['code'] === 'ERROR') {
-        orderStatusDiv.classList.add('order-error');    //adding class 'order-error' to the div with id='order-status'
+        orderStatusDiv.classList.add('order-error');    //adding class 'order-error' to the div with id='order-status' that comer from css file
 
       } else {
         orderStatusDiv.classList.remove('order-error');
@@ -81,3 +81,19 @@ function orderMelons(evt) {
     });
 }
 document.querySelector('#order-form').addEventListener('submit', orderMelons);
+
+
+// FURTHER STUDY
+const image = document.getElementById('get-dog-image');
+ 
+let getImage = () => {
+  fetch('https://dog.ceo/api/breeds/image/random')
+    .then((response) => response.json())  
+    .then((responseJson) => {
+      console.log(responseJson);
+      
+      // document.getElementById('dog-image').classList.add()
+      document.getElementById('dog-image').innerHTML += `<img src = "${responseJson['message']}">`;
+    });
+}
+image.addEventListener('click', getImage);
